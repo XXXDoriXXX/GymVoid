@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Виправлене вирівнювання для всіх екранів */
+/* Виправляємо горизонтальний скролл */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* ВАЖЛИВО: прибирає горизонтальний скролл */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Виправлене центрування */
+.container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100vw; /* Фіксує ширину */
+    padding: 1rem;
+    overflow: hidden; /* Додатковий захист від скроллу */
+}
+
+/* Фікс для контейнерів */
+.glass {
+    width: 100%;
+    max-width: 400px; /* Фіксує розмір контейнера */
+    text-align: center;
+}
+
+/* Фоновий ефект паралаксу */
+body {
+    @apply bg-gradient-to-br from-indigo-800 via-purple-700 to-pink-600 text-white min-h-screen overflow-hidden;
+    background-attachment: fixed;
+}
+
+/* Прозорі блоки (Glassmorphism) */
+.glass {
+    @apply bg-white/20 backdrop-blur-lg border border-white/30 shadow-2xl rounded-3xl p-6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+/* Кнопки з глоу-ефектом */
+button {
+    @apply w-full py-3 text-lg font-bold rounded-lg transition transform hover:scale-105 shadow-lg;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 50%);
+    top: -150%;
+    left: -50%;
+    transform: rotate(25deg);
+    transition: top 0.5s ease;
+}
+
+button:hover::before {
+    top: 150%;
+}
+
+button.primary {
+    @apply bg-blue-500 hover:bg-blue-700 text-white shadow-blue-500/50 hover:shadow-blue-700/50;
+}
+
+button.secondary {
+    @apply bg-green-500 hover:bg-green-700 text-white shadow-green-500/50 hover:shadow-green-700/50;
+}
+
+/* Плавна поява елементів */
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
