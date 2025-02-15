@@ -3,11 +3,15 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/app/context/AuthContext";
 
 export default function RegisterPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const { login } = useAuth();
+    const router = useRouter();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -16,6 +20,9 @@ export default function RegisterPage() {
             return;
         }
         console.log("Registering:", { email, password });
+        // Фейковий логін після реєстрації
+        login();
+        router.push("/workouts");
     };
 
     return (

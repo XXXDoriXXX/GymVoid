@@ -3,10 +3,20 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/app/context/AuthContext";
 
 export default function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const { login } = useAuth();
+    const router = useRouter();
+
+    const handleLogin = (e: React.FormEvent) => {
+        e.preventDefault();
+        login();
+        router.push("/workouts");
+    };
 
     return (
         <div className="container-center">
@@ -17,7 +27,7 @@ export default function LoginPage() {
                 className="glass"
             >
                 <h2 className="text-3xl font-bold text-center mb-4">🔑 Login</h2>
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleLogin}>
                     <input
                         type="email"
                         placeholder="Email"
@@ -35,6 +45,7 @@ export default function LoginPage() {
                         className="w-full p-3 rounded-lg border bg-white/10 text-white placeholder-white/70 focus:outline-none focus:ring-4 focus:ring-blue-400"
                     />
                     <button
+                        type="submit"
                         className="w-full py-3 text-lg font-bold rounded-lg bg-blue-500 hover:bg-blue-700 text-white transition transform hover:scale-105"
                     >
                         Login
