@@ -106,6 +106,26 @@ export default function WorkoutViewPage() {
         return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
     };
 
+    // Функція завершення тренування з валідацією та редіректом на звіт
+    const finishWorkout = () => {
+        // Перевірка: чи завершено всі підходи (якщо ні — попередження)
+        const incomplete = workout?.exercises.some(
+            (exercise) => (completedSets[exercise.id] || 0) < exercise.sets
+        );
+        if (incomplete) {
+            const confirmFinish = confirm("Не всі підходи завершені. Ви впевнені, що хочете завершити тренування?");
+            if (!confirmFinish) return;
+        }
+        // Формуємо звіт, який містить дані тренування та історію виконання
+        const workoutReport = {
+            workout,
+            history,
+            timer, // тривалість тренування
+        };
+        localStorage.setItem("workoutReport", JSON.stringify(workoutReport));
+        router.push("/workout-report");
+    };
+
     if (!workout) {
         return <div className="text-center text-gray-400 text-lg">Завантаження...</div>;
     }
@@ -196,8 +216,9 @@ export default function WorkoutViewPage() {
                     })}
                 </div>
 
+                {/* Кнопка завершення тренування */}
                 <motion.button
-                    onClick={() => router.push("/workouts")}
+                    onClick={finishWorkout}
                     className="w-full py-3 text-lg font-bold rounded-lg bg-red-500 hover:bg-red-700 text-white transition transform hover:scale-105 mt-6"
                 >
                     ❌ Завершити тренування
@@ -208,7 +229,7 @@ export default function WorkoutViewPage() {
                 </Link>
             </div>
 
-            {/* Detached Timer Widget (visible when timer is running and modal is closed) */}
+            {/* Detached Timer Widget */}
             {detachedTimer && (
                 <motion.div
                     initial={{ y: -100, opacity: 0 }}
@@ -323,7 +344,6 @@ export default function WorkoutViewPage() {
                             <div className="flex justify-end mt-6">
                                 <button
                                     onClick={() => {
-                                        // Якщо таймер працює, від'єднуємо його замість закриття
                                         if (timerRunning) {
                                             setDetachedTimer(true);
                                         }
