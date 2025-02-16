@@ -17,8 +17,10 @@ function Navbar() {
             <div className="container mx-auto flex justify-between items-center">
                 {/* Анімований логотип */}
                 <motion.div whileHover={{ scale: 1.1 }}>
-                    <Link href="/" className="text-lg font-bold text-white drop-shadow-lg">
-                        🌟 GymVoid
+                    <Link href={isLoggedIn ? "/dashboard" : "/"}>
+                        <span className="text-lg font-bold text-white drop-shadow-lg">
+                            🌟 GymVoid
+                        </span>
                     </Link>
                 </motion.div>
 
