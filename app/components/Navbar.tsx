@@ -1,11 +1,13 @@
 "use client";
-import "../styles/globals.css";
-import { AuthProvider, useAuth } from "@/app/context/AuthContext";
+
+import { useAuth } from "@/app/context/AuthContext";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 function Navbar() {
     const { isLoggedIn } = useAuth();
+
+    if (isLoggedIn === null) return null; // Не рендеримо поки не ініціалізується `isLoggedIn`
 
     return (
         <motion.nav
@@ -15,14 +17,12 @@ function Navbar() {
             className="fixed top-0 left-0 w-full bg-black/30 backdrop-blur-md p-4 shadow-md"
         >
             <div className="container mx-auto flex justify-between items-center">
-                {/* Анімований логотип */}
                 <motion.div whileHover={{ scale: 1.1 }}>
                     <Link href="/" className="text-lg font-bold text-white drop-shadow-lg">
                         🌟 GymVoid
                     </Link>
                 </motion.div>
 
-                {/* Динамічне меню */}
                 <div className="flex space-x-4">
                     {isLoggedIn ? (
                         <motion.div whileHover={{ scale: 1.1 }}>
@@ -50,16 +50,4 @@ function Navbar() {
     );
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-    return (
-        <html lang="en">
-        <body className="bg-gradient-to-br from-indigo-800 via-purple-700 to-pink-600 text-white">
-        <AuthProvider>
-            <Navbar />
-            {/* Контент сторінки */}
-            <main className="container mx-auto pt-16 p-4">{children}</main>
-        </AuthProvider>
-        </body>
-        </html>
-    );
-}
+export default Navbar;

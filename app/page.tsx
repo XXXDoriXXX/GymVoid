@@ -15,7 +15,6 @@ export default function Home() {
 
     return (
         <div className="container-center text-center">
-            {/* Паралаксний бекграунд */}
             <motion.div
                 className="absolute top-0 left-0 w-full h-full"
                 style={{
@@ -23,7 +22,6 @@ export default function Home() {
                 }}
             />
 
-            {/* Основний контент */}
             <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -44,7 +42,7 @@ export default function Home() {
                     transition={{ duration: 1 }}
                     className="mt-4 text-lg text-white/80"
                 >
-                    Your fitness journey starts here.
+                    Your fitness journ  ey starts here.
                 </motion.p>
                 <div className="mt-6 flex justify-center space-x-4">
                     <Link href="/login" className="px-6 py-2 primary rounded-xl">Login</Link>
