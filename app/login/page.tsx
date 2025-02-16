@@ -9,13 +9,26 @@ import { useAuth } from "@/app/context/AuthContext";
 export default function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
     const { login } = useAuth();
     const router = useRouter();
 
+    const validateEmail = (email: string) => /\S+@\S+\.\S+/.test(email);
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (!validateEmail(email)) {
+            setError("Невірний формат email!");
+            return;
+        }
+        if (password.length < 6) {
+            setError("Пароль повинен містити не менше 6 символів!");
+            return;
+        }
+
+        setError("");
         login();
-        router.push("/workouts");
+        router.push("/dashboard");
     };
 
     return (
@@ -44,6 +57,7 @@ export default function LoginPage() {
                         required
                         className="w-full p-3 rounded-lg border bg-white/10 text-white placeholder-white/70 focus:outline-none focus:ring-4 focus:ring-blue-400"
                     />
+                    {error && <p className="text-red-400 text-sm">{error}</p>}
                     <button
                         type="submit"
                         className="w-full py-3 text-lg font-bold rounded-lg bg-blue-500 hover:bg-blue-700 text-white transition transform hover:scale-105"

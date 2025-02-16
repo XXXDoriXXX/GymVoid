@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import ProtectedRoute from "@/app/components/ProtectedRoute";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Workout } from "@/lib/types";
@@ -14,6 +15,7 @@ export default function WorkoutsPage() {
     }, []);
 
     return (
+        <ProtectedRoute>
         <div className="container-center flex flex-col w-full max-w-3xl mx-auto p-6">
             {/* Заголовок */}
             <motion.h1
@@ -74,5 +76,6 @@ export default function WorkoutsPage() {
                 )}
             </div>
         </div>
+        </ProtectedRoute>
     );
 }

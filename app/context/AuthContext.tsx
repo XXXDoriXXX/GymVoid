@@ -1,7 +1,7 @@
-import { createContext, useState, ReactNode, useContext } from "react";
+import { createContext, useState, useEffect, ReactNode, useContext } from "react";
 
 interface AuthContextProps {
-    isLoggedIn: boolean;
+    isLoggedIn: boolean | null; // Додаємо `null` для очікування ініціалізації
     login: () => void;
     logout: () => void;
 }
@@ -9,9 +9,25 @@ interface AuthContextProps {
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const login = () => setIsLoggedIn(true);
-    const logout = () => setIsLoggedIn(false);
+    const [isLoggedIn, setIsLoggedIn] = useState<boolean | null>(null); // Початковий стан `null`
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const storedValue = localStorage.getItem("isLoggedIn") === "true";
+            setIsLoggedIn(storedValue);
+        }
+    }, []);
+
+
+    const login = () => {
+        localStorage.setItem("isLoggedIn", "true");
+        setIsLoggedIn(true);
+    };
+
+    const logout = () => {
+        localStorage.removeItem("isLoggedIn");
+        setIsLoggedIn(false);
+    };
 
     return (
         <AuthContext.Provider value={{ isLoggedIn, login, logout }}>

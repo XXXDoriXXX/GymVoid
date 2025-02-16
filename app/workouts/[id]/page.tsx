@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useRouter, useParams } from "next/navigation";
+import ProtectedRoute from "@/app/components/ProtectedRoute";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
@@ -120,10 +121,10 @@ export default function WorkoutViewPage() {
         const workoutReport = {
             workout,
             history,
-            timer, // тривалість тренування
+            timer,
         };
         localStorage.setItem("workoutReport", JSON.stringify(workoutReport));
-        router.push("/workout-report");
+        router.push("/workouts/report");
     };
 
     if (!workout) {
@@ -131,6 +132,7 @@ export default function WorkoutViewPage() {
     }
 
     return (
+        <ProtectedRoute>
         <div className="flex items-center justify-center min-h-screen px-4 relative">
             {/* Main Workout Container */}
             <div className="workout-container w-full max-w-2xl bg-white/20 backdrop-blur-lg p-6 rounded-xl shadow-2xl">
@@ -416,5 +418,6 @@ export default function WorkoutViewPage() {
                 )}
             </AnimatePresence>
         </div>
+        </ProtectedRoute>
     );
 }

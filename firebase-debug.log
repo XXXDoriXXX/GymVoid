@@ -1,0 +1,157 @@
+[debug] [2025-02-16T20:37:55.527Z] ----------------------------------------------------------------------
+[debug] [2025-02-16T20:37:55.530Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\vadym\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions,hosting --debug
+[debug] [2025-02-16T20:37:55.530Z] CLI Version:   13.31.1
+[debug] [2025-02-16T20:37:55.530Z] Platform:      win32
+[debug] [2025-02-16T20:37:55.531Z] Node Version:  v22.14.0
+[debug] [2025-02-16T20:37:55.531Z] Time:          Sun Feb 16 2025 22:37:55 GMT+0200 (за східноєвропейським стандартним часом)
+[debug] [2025-02-16T20:37:55.531Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-02-16T20:37:55.715Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-02-16T20:37:55.716Z] > authorizing via signed-in user (vadimkolomi2007@gmail.com)
+[debug] [2025-02-16T20:37:55.717Z] [iam] checking project gymvoid-51e67 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-02-16T20:37:55.718Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:37:55.719Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:37:55.720Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gymvoid-51e67:testIamPermissions [none]
+[debug] [2025-02-16T20:37:55.720Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gymvoid-51e67:testIamPermissions x-goog-quota-user=projects/gymvoid-51e67
+[debug] [2025-02-16T20:37:55.720Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gymvoid-51e67:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-02-16T20:37:56.597Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gymvoid-51e67:testIamPermissions 200
+[debug] [2025-02-16T20:37:56.597Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gymvoid-51e67:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-02-16T20:37:56.598Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:37:56.598Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:37:56.598Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/gymvoid-51e67/serviceAccounts/gymvoid-51e67@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-02-16T20:37:56.598Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/gymvoid-51e67/serviceAccounts/gymvoid-51e67@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-02-16T20:37:57.420Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/gymvoid-51e67/serviceAccounts/gymvoid-51e67@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-02-16T20:37:57.420Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/gymvoid-51e67/serviceAccounts/gymvoid-51e67@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-02-16T20:37:57.421Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:37:57.421Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:37:57.422Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gymvoid-51e67 [none]
+[debug] [2025-02-16T20:37:57.711Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gymvoid-51e67 200
+[debug] [2025-02-16T20:37:57.712Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gymvoid-51e67 {"projectId":"gymvoid-51e67","projectNumber":"963568399388","displayName":"GymVoid","name":"projects/gymvoid-51e67","resources":{"hostingSite":"gymvoid-51e67"},"state":"ACTIVE","etag":"1_a371a434-18f4-41f6-8472-13bd5a7848af"}
+[info] 
+[info] === Deploying to 'gymvoid-51e67'...
+[info] 
+[info] i  deploying functions, hosting 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[error] 
+[error] Error: functions predeploy error: Command terminated with non-zero exit code 2
+[debug] [2025-02-16T20:39:10.293Z] ----------------------------------------------------------------------
+[debug] [2025-02-16T20:39:10.295Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\vadym\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions,hosting --debug
+[debug] [2025-02-16T20:39:10.296Z] CLI Version:   13.31.1
+[debug] [2025-02-16T20:39:10.296Z] Platform:      win32
+[debug] [2025-02-16T20:39:10.296Z] Node Version:  v22.14.0
+[debug] [2025-02-16T20:39:10.296Z] Time:          Sun Feb 16 2025 22:39:10 GMT+0200 (за східноєвропейським стандартним часом)
+[debug] [2025-02-16T20:39:10.296Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-02-16T20:39:10.476Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-02-16T20:39:10.477Z] > authorizing via signed-in user (vadimkolomi2007@gmail.com)
+[debug] [2025-02-16T20:39:10.477Z] [iam] checking project gymvoid-51e67 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-02-16T20:39:10.479Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:39:10.480Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:39:10.481Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gymvoid-51e67:testIamPermissions [none]
+[debug] [2025-02-16T20:39:10.481Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gymvoid-51e67:testIamPermissions x-goog-quota-user=projects/gymvoid-51e67
+[debug] [2025-02-16T20:39:10.482Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gymvoid-51e67:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-02-16T20:39:11.337Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gymvoid-51e67:testIamPermissions 200
+[debug] [2025-02-16T20:39:11.338Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gymvoid-51e67:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-02-16T20:39:11.338Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:39:11.339Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:39:11.339Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/gymvoid-51e67/serviceAccounts/gymvoid-51e67@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-02-16T20:39:11.339Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/gymvoid-51e67/serviceAccounts/gymvoid-51e67@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-02-16T20:39:12.146Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/gymvoid-51e67/serviceAccounts/gymvoid-51e67@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-02-16T20:39:12.146Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/gymvoid-51e67/serviceAccounts/gymvoid-51e67@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-02-16T20:39:12.147Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:39:12.147Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:39:12.148Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gymvoid-51e67 [none]
+[debug] [2025-02-16T20:39:12.505Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gymvoid-51e67 200
+[debug] [2025-02-16T20:39:12.505Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gymvoid-51e67 {"projectId":"gymvoid-51e67","projectNumber":"963568399388","displayName":"GymVoid","name":"projects/gymvoid-51e67","resources":{"hostingSite":"gymvoid-51e67"},"state":"ACTIVE","etag":"1_a371a434-18f4-41f6-8472-13bd5a7848af"}
+[info] 
+[info] === Deploying to 'gymvoid-51e67'...
+[info] 
+[info] i  deploying functions, hosting 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[error] 
+[error] Error: functions predeploy error: Command terminated with non-zero exit code 2
+[debug] [2025-02-16T20:40:18.848Z] ----------------------------------------------------------------------
+[debug] [2025-02-16T20:40:18.851Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\vadym\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions,hosting --debug
+[debug] [2025-02-16T20:40:18.851Z] CLI Version:   13.31.1
+[debug] [2025-02-16T20:40:18.851Z] Platform:      win32
+[debug] [2025-02-16T20:40:18.852Z] Node Version:  v22.14.0
+[debug] [2025-02-16T20:40:18.852Z] Time:          Sun Feb 16 2025 22:40:18 GMT+0200 (за східноєвропейським стандартним часом)
+[debug] [2025-02-16T20:40:18.852Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-02-16T20:40:19.063Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-02-16T20:40:19.065Z] > authorizing via signed-in user (vadimkolomi2007@gmail.com)
+[debug] [2025-02-16T20:40:19.065Z] [iam] checking project gymvoid-51e67 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-02-16T20:40:19.067Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:40:19.067Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:40:19.069Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gymvoid-51e67:testIamPermissions [none]
+[debug] [2025-02-16T20:40:19.069Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gymvoid-51e67:testIamPermissions x-goog-quota-user=projects/gymvoid-51e67
+[debug] [2025-02-16T20:40:19.069Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gymvoid-51e67:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-02-16T20:40:19.923Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gymvoid-51e67:testIamPermissions 200
+[debug] [2025-02-16T20:40:19.924Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gymvoid-51e67:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-02-16T20:40:19.925Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:40:19.925Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:40:19.925Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/gymvoid-51e67/serviceAccounts/gymvoid-51e67@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-02-16T20:40:19.926Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/gymvoid-51e67/serviceAccounts/gymvoid-51e67@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-02-16T20:40:20.725Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/gymvoid-51e67/serviceAccounts/gymvoid-51e67@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-02-16T20:40:20.726Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/gymvoid-51e67/serviceAccounts/gymvoid-51e67@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-02-16T20:40:20.727Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:40:20.727Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:40:20.727Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gymvoid-51e67 [none]
+[debug] [2025-02-16T20:40:21.073Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gymvoid-51e67 200
+[debug] [2025-02-16T20:40:21.073Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gymvoid-51e67 {"projectId":"gymvoid-51e67","projectNumber":"963568399388","displayName":"GymVoid","name":"projects/gymvoid-51e67","resources":{"hostingSite":"gymvoid-51e67"},"state":"ACTIVE","etag":"1_a371a434-18f4-41f6-8472-13bd5a7848af"}
+[info] 
+[info] === Deploying to 'gymvoid-51e67'...
+[info] 
+[info] i  deploying functions, hosting 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] +  functions: Finished running predeploy script. 
+[debug] [2025-02-16T20:40:24.118Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:40:24.118Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:40:24.119Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/gymvoid-51e67 [none]
+[debug] [2025-02-16T20:40:24.349Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/gymvoid-51e67 200
+[debug] [2025-02-16T20:40:24.349Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/gymvoid-51e67 {"projectNumber":"963568399388","projectId":"gymvoid-51e67","lifecycleState":"ACTIVE","name":"GymVoid","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-02-16T20:02:07.058355Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[debug] [2025-02-16T20:40:24.350Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:40:24.350Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:40:24.351Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:40:24.351Z] Checked if tokens are valid: true, expires at: 1739739942396
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2025-02-16T20:40:24.351Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:40:24.351Z] Checked if tokens are valid: true, expires at: 1739739942396
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-02-16T20:40:24.352Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:40:24.352Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:40:24.352Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-02-16T20:40:24.352Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/gymvoid-51e67
+[debug] [2025-02-16T20:40:24.353Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/runtimeconfig.googleapis.com [none]
+[debug] [2025-02-16T20:40:24.353Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/gymvoid-51e67
+[debug] [2025-02-16T20:40:24.355Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/cloudbuild.googleapis.com [none]
+[debug] [2025-02-16T20:40:24.355Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/cloudbuild.googleapis.com x-goog-quota-user=projects/gymvoid-51e67
+[debug] [2025-02-16T20:40:24.356Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/artifactregistry.googleapis.com [none]
+[debug] [2025-02-16T20:40:24.356Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/artifactregistry.googleapis.com x-goog-quota-user=projects/gymvoid-51e67
+[debug] [2025-02-16T20:40:25.332Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/cloudfunctions.googleapis.com 200
+[debug] [2025-02-16T20:40:25.333Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2025-02-16T20:40:25.334Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/cloudbuild.googleapis.com 200
+[debug] [2025-02-16T20:40:25.334Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/cloudbuild.googleapis.com [omitted]
+[warn] !  functions: missing required API cloudbuild.googleapis.com. Enabling now... 
+[debug] [2025-02-16T20:40:25.335Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:40:25.336Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:40:25.336Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/cloudbuild.googleapis.com:enable [none]
+[debug] [2025-02-16T20:40:25.336Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/cloudbuild.googleapis.com:enable x-goog-quota-user=projects/gymvoid-51e67
+[debug] [2025-02-16T20:40:25.338Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/runtimeconfig.googleapis.com 200
+[debug] [2025-02-16T20:40:25.338Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2025-02-16T20:40:25.351Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/artifactregistry.googleapis.com 200
+[debug] [2025-02-16T20:40:25.351Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/artifactregistry.googleapis.com [omitted]
+[warn] !  artifactregistry: missing required API artifactregistry.googleapis.com. Enabling now... 
+[debug] [2025-02-16T20:40:25.351Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:40:25.352Z] Checked if tokens are valid: true, expires at: 1739739942396
+[debug] [2025-02-16T20:40:25.352Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/artifactregistry.googleapis.com:enable [none]
+[debug] [2025-02-16T20:40:25.352Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/artifactregistry.googleapis.com:enable x-goog-quota-user=projects/gymvoid-51e67
+[debug] [2025-02-16T20:40:25.694Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/artifactregistry.googleapis.com:enable 400
+[debug] [2025-02-16T20:40:25.695Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/gymvoid-51e67/services/artifactregistry.googleapis.com:enable [omitted]
+[error] 
+[error] Error: Your project gymvoid-51e67 must be on the Blaze (pay-as-you-go) plan to complete this command. Required API artifactregistry.googleapis.com can't be enabled until the upgrade is complete. To upgrade, visit the following URL:
+
+https://console.firebase.google.com/project/gymvoid-51e67/usage/details

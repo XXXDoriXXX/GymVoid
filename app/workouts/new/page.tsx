@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import ProtectedRoute from "@/app/components/ProtectedRoute";
 import { useRouter } from "next/navigation";
 
 interface Exercise {
@@ -55,6 +56,7 @@ export default function WorkoutCreatePage() {
     };
 
     return (
+        <ProtectedRoute>
         <div className="container-center flex flex-col w-full max-w-3xl mx-auto p-6 space-y-8">
             <motion.h1
                 initial={{ opacity: 0, y: -20 }}
@@ -179,5 +181,6 @@ export default function WorkoutCreatePage() {
                 </Link>
             </div>
         </div>
+        </ProtectedRoute>
     );
 }
